@@ -1,0 +1,136 @@
+body{
+
+	background-color: white;
+	text-align: center;
+	font-family: serif;
+	margin:0;
+}
+
+
+.header{
+
+	width: auto;
+	background-color: green;
+	height: 50px;
+}
+
+.footer{
+
+	background-color: green;
+	position: relative;
+	height: 100px;
+	margin-top: -100px;
+	clear: both;
+}
+
+
+#title{
+
+	text-align: 
+
+	margin-top:10px;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+
+h1{
+
+	margin-bottom: 5px;
+}
+
+
+form{
+
+	border-radius: 5px;
+	padding: 30px 70px;
+	background-color: white;
+	max-width: 600px;
+	margin: 40px auto;
+	margin-left: 5px;
+    float:left;
+    margin-top: 0px;
+}
+
+
+.style-form label{
+
+	display:block;
+	margin: 6px;
+	text-align: left;
+}
+
+.style-form input,
+.style-form textarea{
+	border-radius: 5px;
+	font-family: sans-serif;
+	font-size: 16px; 
+	padding:5px;
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.style-form select{
+	border-radius: 5px;
+	font:serif;
+	font-size: 16px; 
+	padding:5px;
+	display: block;
+	width: 100%;
+	min-height: 1px;
+	margin-bottom: 30px;}
+
+.style-form input[type="radio"]{
+	width:auto; 
+	display: inline-block;
+	margin: 10px;
+}
+
+.style-form input[type="checkbox"]{
+	width:auto; 
+	display: inline-block;
+	margin: 10px;
+}
+
+.sbtn{
+	background-color:lightblue;
+	border-radius: 2px;
+	font-size: 16px;
+	width: 150px;
+	display:block
+	margin-top: 10px;
+	padding:20px;
+}
+
+.webbtn{
+	background-color:lightblue;
+	border-radius: 2px;
+	font-size: 16px;
+	width: 200px;
+	display:block
+	margin-top: 0px;
+	padding:20px;
+}
+
+#heading{
+
+	float: center;
+	margin-top: 20px;
+}
+
+#images{
+	float: center;
+	width: 100px auto;
+	margin-bottom: 40px;
+	margin-top: 20px;
+}
+
+
+.algimg{
+	margin-right: 100px;
+	float: right;
+	width: 300px;
+}
