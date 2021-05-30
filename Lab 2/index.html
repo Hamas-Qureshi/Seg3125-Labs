@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+	<h1 id="title" style="color:black;"> The Food Store</h1>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3 style="font-style:sans-serif;"><i>We Care about our Customers</i></h3>
+  <p style="font-style:sans-serif; font-size: 25px; "> 1- You will find options in the drop-down below, please choose and select the category of the products as per your needs</p>
+  <p style="font-size: 25px; font-style:sans-serif;"> 2- Once you have selected the category, click on the Products tab above to view all the available products per category </p>
+	<h1>Choose a Category:</h1>
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="None">None</option> 
+	<option value="LactoseIntolerant">LactoseIntolerant</option>
+    <option value="NutAllergies">NutAllergies</option>
+    <option value="Lactose_Intolerant_and_Nut_Allergies">Lactose_Intolerant_and_Nut_Allergies</option>
+    <!--  Organic  -->
+    <option value="Lactose_Intolerant_Organic">Lactose_Intolerant_Organic</option>
+    <option value="Nut_Allergy_Organic">Nut_Allergy_Organic</option>
+    <option value="LactoseIntolerant_and_NutAllergies_Organic">LactoseIntolerant_and_NutAllergies_Organic</option>
+	</select>
+</div>
+
+
+<div id="Products" class="tabcontent">
+  <h3 style="font-style:sans-serif; font-size: 25px;">We preselected products based on your Dietary restrictions.</h3>
+  <p style="font-style:sans-serif; font-size: 25px;"> 1- Please choose the items you wish to buy, by clicking on the check box.</p>
+  <p style="font-style:sans-serif; font-size: 25px;"> 2- Once done, please click on "Add selected items to the cart" and click on the "Cart" tab above to view the items in your cart </p>
+	<h3>Choose items to buy: </h3>
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3 style="font-style:sans-serif; font-size: 25px;">Your shopping Cart</h3>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+<footer>Created by The Food Store</footer>
+
+
+</body>
+</html>
