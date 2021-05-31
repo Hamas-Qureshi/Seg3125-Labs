@@ -150,6 +150,8 @@ var sortedproducts=products.sort((firstEl, secondEl) => {
 
 } )
 
+//Inspiration for sorting method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
 
 // given restrictions provided, make a reduced list of products
 // prices should be included in this list, as well as a sort based on price
