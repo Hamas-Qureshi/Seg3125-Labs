@@ -12,13 +12,12 @@
 
 	<h1 id="title" style="color:black;"> The Food Store</h1>
 
-<!-- Tab links, each one with an onclick event associated with it -->
 <!-- <div class="tab">
   <button class="Search tablinks" onclick="openInfo(event, 'Client')">Client</button>
   <button class="Bag tablinks" onclick="openInfo(event, 'Products')">Products</button>
   <button class="Cart tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
 </div> -->
-
+<!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
 
   <button class="tablinks active" id="tab1" align="center" onclick="openInfo(event, 'Client')">FILTER PRODUCTS 
@@ -46,8 +45,8 @@
   <p> STEP 3 </p>
 
   </button>
-
 </div>
+
 
 
 <!-- Tab content -->
@@ -56,24 +55,18 @@
   <p style="font-style:sans-serif; font-size: 25px; "> 1- Please choose and select the category of the products as per your needs</p>
   <p style="font-size: 25px; font-style:sans-serif;"> 2- Click on the "View Products" button to view all the available products as per category </p>
 	<h1>Choose a Category:</h1>
-<!-- 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="None">None</option> 
-	<option value="LactoseIntolerant">LactoseIntolerant</option>
-    <option value="NutAllergies">NutAllergies</option>
-    <option value="Lactose_Intolerant_and_Nut_Allergies">Lactose_Intolerant_and_Nut_Allergies</option> -->
 
   <input class = "dietSelect" type = checkbox id = LactoseIntolerant name="LactoseIntolerant" value = "LactoseIntolerant" onchange="populateListProductChoices(this.id, 'displayProduct')">
-  <label class = "dietCategory" for = LactoseIntolerant>LactoseIntolerant</label><br>
+  <label >LactoseIntolerant</label><br>
 
   <input class = "dietSelect" type = checkbox id = NutAllergies name="NutAllergies" value="NutAllergies" onchange="populateListProductChoices(this.id, 'displayProduct')">
-  <label class = "dietCategory" for = NutAllergies>NutAllergies</label><br>
+  <label >NutAllergies</label><br>
 
   <input class = "dietSelect" type = checkbox id = Vegetarian name="Vegetarian" value = "Vegetarian" onchange="populateListProductChoices(this.id, 'displayProduct')">
-  <label class = "dietCategory" for = Vegetarian>Vegetarian</label><br>
+  <label >Vegetarian</label><br>
 
   <input class = "dietSelect" type = checkbox id = Organic name="Organic" value = "Organic" onchange="populateListProductChoices(this.id, 'displayProduct')">
-  <label class = "dietCategory" for = Organic>Organic</label><br>
+  <label> Organic </label><br>
   <br>
 
 <button class="tablinksproducts" onclick="changeTab('tab2', 'Products')"> View Products </button>
