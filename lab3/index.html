@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>The Food Store</title>
+
+</head>
+
+<body>
+
+	<h1 id="title" style="color:black;"> The Food Store</h1>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<!-- <div class="tab">
+  <button class="Search tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="Bag tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="Cart tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div> -->
+
+<div class="tab">
+
+  <button class="tablinks active" id="tab1" align="center" onclick="openInfo(event, 'Client')">FILTER PRODUCTS 
+    <br> 
+    <img width="30" height="50" src = "./Icon/s3.png" /> 
+    <img  width="60" height="40" src = "./Icon/arrow.png" />
+    <br>
+    <p> STEP 1 </p>
+  </button>
+
+  <button class="tablinks" id="tab2" onclick="openInfo(event, 'Products')"> AVAILABLE PRODUCTS <br> <img width="49" height="50" src = "./Icon/Bag.png" />
+  
+  <img  width="60" height="40" src = "./Icon/arrow.png" />
+
+   <br>
+
+  <p> STEP 2 </p>
+
+  </button>
+
+  <button class="tablinks" id="tab3" onclick="openInfo(event, 'Cart')"> YOUR CART<br> <img width="49" height="50" src = "./Icon/cart1.png" /> 
+
+   <br>
+
+  <p> STEP 3 </p>
+
+  </button>
+
+</div>
+
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent" style="display:block">
+  <h3 style="font-style:sans-serif;"><i>We Care about our Customers</i></h3>
+  <p style="font-style:sans-serif; font-size: 25px; "> 1- Please choose and select the category of the products as per your needs</p>
+  <p style="font-size: 25px; font-style:sans-serif;"> 2- Click on the "View Products" button to view all the available products as per category </p>
+	<h1>Choose a Category:</h1>
+<!-- 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="None">None</option> 
+	<option value="LactoseIntolerant">LactoseIntolerant</option>
+    <option value="NutAllergies">NutAllergies</option>
+    <option value="Lactose_Intolerant_and_Nut_Allergies">Lactose_Intolerant_and_Nut_Allergies</option> -->
+
+  <input class = "dietSelect" type = checkbox id = LactoseIntolerant name="LactoseIntolerant" value = "LactoseIntolerant" onchange="populateListProductChoices(this.id, 'displayProduct')">
+  <label class = "dietCategory" for = LactoseIntolerant>LactoseIntolerant</label><br>
+
+  <input class = "dietSelect" type = checkbox id = NutAllergies name="NutAllergies" value="NutAllergies" onchange="populateListProductChoices(this.id, 'displayProduct')">
+  <label class = "dietCategory" for = NutAllergies>NutAllergies</label><br>
+
+  <input class = "dietSelect" type = checkbox id = Vegetarian name="Vegetarian" value = "Vegetarian" onchange="populateListProductChoices(this.id, 'displayProduct')">
+  <label class = "dietCategory" for = Vegetarian>Vegetarian</label><br>
+
+  <input class = "dietSelect" type = checkbox id = Organic name="Organic" value = "Organic" onchange="populateListProductChoices(this.id, 'displayProduct')">
+  <label class = "dietCategory" for = Organic>Organic</label><br>
+  <br>
+
+<button class="tablinksproducts" onclick="changeTab('tab2', 'Products')"> View Products </button>
+
+</div>
+</div>
+
+
+<div id="Products" class="tabcontent">
+  <h3 style="font-style:sans-serif; font-size: 25px;">We preselected products based on your Dietary restrictions.</h3>
+  <p style="font-style:sans-serif; font-size: 25px;"> 1- Please Select the Items you wish to purchase.</p>
+  <p style="font-style:sans-serif; font-size: 25px;"> 2- Click on "ADD SELECTED ITEMS TO YOUR CART" to add the items in your cart </p>
+  <p style="font-style:sans-serif; font-size: 25px;"> 3- Click on "VIEW ITEMS IN YOUR CART" to view the selected items in the cart</p>
+  <p style="font-style:sans-serif; font-size: 25px;"> 4- Click on "FILTER PRODUCTS" if you need to view products from a differnt category</p>
+
+ 
+
+	<h3>Choose items to buy: </h3>
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		ADD SELECTED ITEMS TO THE CART ----->
+	</button> 
+  <button class="tablinkcart" onclick="changeTab('tab3', 'Cart')"> VIEW ITEMS IN YOUR CART</button>
+  <br>
+  <button class="tablinkclient" onclick="changeTab('tab1', 'Client')"> FILTER PRODUCTS </button> 
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3 style="font-style:sans-serif; font-size: 25px;">Your shopping Cart</h3>
+  <p style="font-style:sans-serif; font-size: 25px;"> If you wish to add more products please click on ADD MORE PRODUCTS</p>
+  <div id="displayCart"></div>
+  <button class="tablinksproducts1" onclick="changeTab('tab2', 'Products')"> ADD MORE PRODUCTS </button>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+<!-- <footer>Created by The Food Store
+<br>
+</footer> -->
+
+
+</body>
+</html>
