@@ -21,6 +21,7 @@ function openInfo(evt, tabName) {
 	evt.currentTarget.className += " active";
 
 }
+//same as professor's inspired from w3 school
 
 function changeTab(newtab, newtabcontent){
 	tablinks = document.getElementsByClassName("tablinks");
