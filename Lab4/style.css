@@ -14,10 +14,6 @@
         transform: translate(-50%, -50%);
     }
 
-    /* #image1{
-        
-        text-align: center;
-    } */
 
     #google-map{
         min-width: 100%;
@@ -97,29 +93,9 @@
     }
 
     #loc{
-        /* display: block;
-        text-align: center;
-        line-height: 150%; */
-        margin-bottom: 2px;
-        margin-top: 5px;
+        
+        margin-bottom: 20px;
     }
-
-    #contact{
-        /* display: block;
-        text-align: center;
-        line-height: 150%; */
-        margin-bottom: 2px;
-        margin-top: 5px;
-    }
-
-    /* #pn{
-        display: block;
-        text-align: center;
-        line-height: 150%;
-        font-size: .85em;
-        margin-top: 90px;
-
-    } */
 
     #submit{
         text-align: center;
