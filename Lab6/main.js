@@ -17,7 +17,7 @@ $(function() {
         dateFormat: setDateFormat,
         // no calendar before June 1rst 2020
         minDate: new Date('06/01/2021'),
-        maxDate: '+4M',
+        // maxDate: '+4M',
         // used to disable some dates
         beforeShowDay: $.datepicker.noWeekends,
         beforeShowDay: disableDates
@@ -27,9 +27,10 @@ $(function() {
 
 
 var expert;
- $("select#service").change(function(){
-    var text = $(this).children("option:selected").val().toLowerCase();
-    expert = text.replace("dr. ", "").replace(" ", "-");
+ $("#service").change(function(){
+    var text = $(this).children("option:selected").val()
+    // .toLowerCase();
+    // expert = text.replace("Dr. ", "").replace(" ", "-");
 
 });
 
@@ -44,17 +45,17 @@ function disableDates(date) {
     if (date.getDay() == 6) {
         return [false];
     }
-    if (expert == "Sarah-Linden" && date.getDay() == 3) {
+    if (expert == "Dr. Elon Musk" && date.getDay() == 3) {
         return [false];
     }
-    if (expert == "Elon-Musk" && date.getDay() == 5) {
+    if (expert == "Dr. James Smith" && date.getDay() == 5) {
         return [false];
     }
-    if (expert == "James-Smith" && date.getDay() == 4) {
+    if (expert == "Dr. Sarah Linden" && date.getDay() == 4) {
         return [false];
     }
 
-    var string = jQuery.datepicker.formatDate(setDateFormat, date);
+    var string = jQuery.datepicker.setDateFormat(setDateFormat, date);
     return [unavailableDates.indexOf(string) == -1]
 }
 
