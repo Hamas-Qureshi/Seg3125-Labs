@@ -36,7 +36,7 @@ var expert;
 });
 
 
- var expert;
+var expert;
 var phoneVerified = false;
 
 $("#phone").keyup(function(){
@@ -45,10 +45,11 @@ $("#phone").keyup(function(){
 
     if (!((filter.test(numEntered) == true) || numEntered.length == 10)) {
         $(this).css("background-color", "pink");
+        $(this).alert("Please make sure to enter the correct amount of Digits")
         phoneVerified = false;
-       if(phoneVerified == false) {
-           alert("Please make sure to enter the correct amount of Digits");
-       }
+    //    if(phoneVerified == false) {
+    //        alert("Please make sure to enter the correct amount of Digits");
+    //    }
     }
     else{
         $(this).css("background-color", "white");
