@@ -45,9 +45,8 @@ $("#phone").keyup(function(){
 
     if (!((filter.test(numEntered) == true) || numEntered.length == 10)) {
         $(this).css("background-color", "pink");
-        alert("Please make sure to enter the correct amount of Digits");
         phoneVerified = false;
-        
+        alert("Please make sure to enter the correct amount of Digits");
     }
     else{
         $(this).css("background-color", "white");
