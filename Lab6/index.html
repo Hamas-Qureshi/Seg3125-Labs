@@ -11,14 +11,13 @@
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 	
-
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -216,6 +215,7 @@
 				</div>
 				<div class="col-6 d-flex justify-content-center">
 					<input type="text" id="phone" class="form-control mt-5 text-left custom-form-input" placeholder="Phone Number: (xxx) xxx-xxxx">
+					<p class="col-12" id="invalid-phone">Invalid Phone Number! Please enter the correct amount of numbers</p>
 				</div>
 			</div>
 			<div class="row">
@@ -233,10 +233,10 @@
 
 				<div class="col-6 d-flex justify-content-center">
 					<select id="service" name="service" class="form-control mt-5 text-center custom-form-input">
-						<option value="Select an Expert">Select an Expert</option>
-						<option value="Dr. Elon Musk">Dr. Elon Musk</option>
-						<option value="Dr. James Smith">Dr. James Smith</option>
-						<option value="Dr. Sarah Linden">Dr. Sarah Linden</option>
+						<option value="selectexpert" >Select an Expert</option>
+						<option value="elonmusk" name="expert">Dr. Elon Musk</option>
+						<option value="jamessmith" name="expert">Dr. James Smith</option>
+						<option value="sarahlinden" name="expert">Dr. Sarah Linden</option>
 					</select>
 				</div>
 

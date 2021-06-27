@@ -19,25 +19,22 @@ $(function() {
         minDate: new Date('06/01/2021'),
         // maxDate: '+4M',
         // used to disable some dates
-        beforeShowDay: $.datepicker.noWeekends,
         beforeShowDay: disableDates
     });
     // $("#date").prop('disabled', true);
 });
 
 
-var expert;
- $("#service").change(function(){
-    var text = $(this).children("option:selected").val()
-    // .toLowerCase();
-    // expert = text.replace("Dr. ", "").replace(" ", "-");
 
-});
-
-var unavailableDates = ["06/29/2021", "06/2/2021", "06/28/2021", "06//2021"]
+var unavailableDates = ["06/29/2020", "07/07/2020", "06/28/2021", "07/10/2020"]
 const setDateFormat = "mm/dd/yy";
 
+
+
 function disableDates(date) {
+
+    var getexpert = document.getElementById("service").value
+
     // Sunday is Day 0, disable all Sundays
     if (date.getDay() == 0) {
         return [false];
@@ -45,14 +42,18 @@ function disableDates(date) {
     if (date.getDay() == 6) {
         return [false];
     }
-    if (expert == "Dr. Elon Musk" && date.getDay() == 3) {
+
+    if (getexpert == "elonmusk" && date.getDay() == 3) {
         return [false];
     }
-    if (expert == "Dr. James Smith" && date.getDay() == 5) {
+    else if (expert == "jamessmith" && date.getDay() == 5) {
         return [false];
     }
-    if (expert == "Dr. Sarah Linden" && date.getDay() == 4) {
+    else if (expert == "sarahlinden" && date.getDay() == 4) {
         return [false];
+    }
+    else{
+        alert("select a service first please")
     }
 
     var string = jQuery.datepicker.setDateFormat(setDateFormat, date);
