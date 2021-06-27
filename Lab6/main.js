@@ -1,31 +1,19 @@
-// $(function() {
-//     $("#date").datepicker({
-//         dateFormat: setDateFormat,
-//         // no calendar before June 1rst 2020
-//         minDate: new Date('06/01/2020'),
-//         maxDate: '+4M',
-//         // used to disable some dates
-//         beforeShowDay: $.datepicker.noWeekends,
-//         beforeShowDay: disableDates
+
+// $( function() {
+//     $( "#date" ).datepicker()({
+//         changeYear: false,
+//         dateFormat: 'dd/mm/yy',
+//         // minDate: new Date('06/23/2021'),
+//         beforeShowDay: DisableDates
 //     });
-//     // $("#date").prop('disabled', true);
 // });
 
-$( function() {
-    $( "#date" ).datepicker()({
-        changeYear: false,
-        dateFormat: 'dd/mm/yy',
-        // minDate: new Date('06/23/2021'),
-        beforeShowDay: DisableDates
-    });
-});
-
-// var dates = ["20/01/2021", "21/06/2021", "22/06/2021", "23/06/2021"];
-var dates = ["06/20/2021", "06/21/2021", "06/22/2021", "06/23/2021"];
-function DisableDates(date) {
-    var string = jQuery.datepicker.formatDate('dd/mm/yy', date);
-    return [dates.indexOf(string) == -1];
-}
+// // var dates = ["20/01/2021", "21/06/2021", "22/06/2021", "23/06/2021"];
+// var dates = ["06/20/2021", "06/21/2021", "06/22/2021", "06/23/2021"];
+// function DisableDates(date) {
+//     var string = jQuery.datepicker.formatDate('dd/mm/yy', date);
+//     return [dates.indexOf(string) == -1];
+// }
 
 $('#time').timepicker({
     timeFormat: 'hh:mm p',
@@ -57,8 +45,9 @@ $("#phone").keyup(function(){
 
     if (!((filter.test(numEntered) == true) || numEntered.length == 10)) {
         $(this).css("background-color", "pink");
+        alert("Please make sure to enter the correct amount of Digits")
         phoneVerified = false;
-        $("#invalid-phone").show();
+        
     }
     else{
         $(this).css("background-color", "white");
