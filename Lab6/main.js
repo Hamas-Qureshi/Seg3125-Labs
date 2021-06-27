@@ -37,19 +37,24 @@ var expert;
 
 
 var expert;
-var phoneVerified = false;
+
 
 $("#phone").keyup(function(){
     var filter = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
     var numEntered = $(this).val();
-
+    let phoneVerified = false;
     if (!((filter.test(numEntered) == true) || numEntered.length == 10)) {
         $(this).css("background-color", "pink");
-        $(this).alert("Please make sure to enter the correct amount of Digits")
         phoneVerified = false;
     //    if(phoneVerified == false) {
     //        alert("Please make sure to enter the correct amount of Digits");
     //    }
+
+            if (filter.test(numEntered) ==  false){
+                toReturn = "<ul> <li> The phone number you enter should be in the format (XXX)-XXX-XXXX. ex: (647)-949-0837 or 6479490837 or 647 949 0837 </li></ul>"
+            }
+
+            return phoneVerified
     }
     else{
         $(this).css("background-color", "white");
