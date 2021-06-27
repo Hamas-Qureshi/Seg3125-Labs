@@ -58,6 +58,7 @@ $("#phone").keyup(function(){
     if (!((filter.test(numEntered) == true) || numEntered.length == 10)) {
         $(this).css("background-color", "pink");
         phoneVerified = false;
+        $("#invalid-phone").show();
     }
     else{
         $(this).css("background-color", "white");
