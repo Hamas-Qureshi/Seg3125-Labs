@@ -19,6 +19,7 @@ $(function() {
         minDate: new Date('06/01/2021'),
         // maxDate: '+4M',
         // used to disable some dates
+        beforeShowDay: $.datepicker.noWeekends,
         beforeShowDay: disableDates
     });
     // $("#date").prop('disabled', true);
