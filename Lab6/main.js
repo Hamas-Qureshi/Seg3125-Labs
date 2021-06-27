@@ -1,21 +1,20 @@
 
 
-$('#time').timepicker({
-    timeFormat: 'hh:mm p',
-    interval: 60,
-    minTime: '9:00am',
-    maxTime: '6:00pm',
-    startTime: '09:00',
-    dynamic: false,
-    dropdown: true,
-    scrollbar: true
-});
+// $('#time').timepicker({
+//     timeFormat: 'hh:mm p',
+//     interval: 60,
+//     minTime: '9:00am',
+//     maxTime: '6:00pm',
+//     startTime: '09:00',
+//     dynamic: false,
+//     dropdown: true,
+//     scrollbar: true
+// });
 
 
 $(function() {
     $("#date").datepicker({
         dateFormat: setDateFormat,
-        // no calendar before June 1rst 2020
         minDate: new Date('06/01/2021'),
         // maxDate: '+4M',
         // used to disable some dates
@@ -29,8 +28,6 @@ $(function() {
 
 var unavailableDates = ["06/29/2020", "07/07/2020", "06/28/2021", "07/10/2020"]
 const setDateFormat = "mm/dd/yy";
-
-
 
 function disableDates(date) {
 
