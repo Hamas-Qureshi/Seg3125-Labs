@@ -1,19 +1,4 @@
 
-// $( function() {
-//     $( "#date" ).datepicker()({
-//         changeYear: false,
-//         dateFormat: 'dd/mm/yy',
-//         // minDate: new Date('06/23/2021'),
-//         beforeShowDay: DisableDates
-//     });
-// });
-
-// // var dates = ["20/01/2021", "21/06/2021", "22/06/2021", "23/06/2021"];
-// var dates = ["06/20/2021", "06/21/2021", "06/22/2021", "06/23/2021"];
-// function DisableDates(date) {
-//     var string = jQuery.datepicker.formatDate('dd/mm/yy', date);
-//     return [dates.indexOf(string) == -1];
-// }
 
 $('#time').timepicker({
     timeFormat: 'hh:mm p',
@@ -27,6 +12,19 @@ $('#time').timepicker({
 });
 
 
+$(function() {
+    $("#date").datepicker({
+        dateFormat: setDateFormat,
+        // no calendar before June 1rst 2020
+        minDate: new Date('06/01/2021'),
+        maxDate: '+4M',
+        // used to disable some dates
+        beforeShowDay: $.datepicker.noWeekends,
+        beforeShowDay: disableDates
+    });
+    // $("#date").prop('disabled', true);
+});
+
 
 var expert;
  $("select#service").change(function(){
@@ -35,8 +33,33 @@ var expert;
 
 });
 
+var unavailableDates = ["06/29/2021", "06/2/2021", "06/28/2021", "06//2021"]
+const setDateFormat = "mm/dd/yy";
 
-var expert;
+function disableDates(date) {
+    // Sunday is Day 0, disable all Sundays
+    if (date.getDay() == 0) {
+        return [false];
+    }
+    if (date.getDay() == 6) {
+        return [false];
+    }
+    if (expert == "Sarah-Linden" && date.getDay() == 3) {
+        return [false];
+    }
+    if (expert == "Elon-Musk" && date.getDay() == 5) {
+        return [false];
+    }
+    if (expert == "James-Smith" && date.getDay() == 4) {
+        return [false];
+    }
+
+    var string = jQuery.datepicker.formatDate(setDateFormat, date);
+    return [unavailableDates.indexOf(string) == -1]
+}
+
+
+var phoneVerified = false;
 
 
 $("#phone").keyup(function(){
@@ -45,16 +68,7 @@ $("#phone").keyup(function(){
     let phoneVerified = false;
     if (!((filter.test(numEntered) == true) || numEntered.length == 10)) {
         $(this).css("background-color", "pink");
-        phoneVerified = false;
-    //    if(phoneVerified == false) {
-    //        alert("Please make sure to enter the correct amount of Digits");
-    //    }
-
-            if (filter.test(numEntered) ==  false){
-                toReturn = "<ul> <li> The phone number you enter should be in the format (XXX)-XXX-XXXX. ex: (647)-949-0837 or 6479490837 or 647 949 0837 </li></ul>"
-            }
-
-            return phoneVerified
+        phoneVerified = false;  
     }
     else{
         $(this).css("background-color", "white");
