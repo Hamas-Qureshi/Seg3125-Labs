@@ -20,7 +20,7 @@ function disableDates(date) {
 
     var getexpert = document.getElementById("expert").value
 
-    // Sunday is Day 0, disable all Sundays
+    
     if (date.getDay() == 0) {
         return [false];
     }
