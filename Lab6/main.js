@@ -13,7 +13,7 @@ $(function() {
 });
 
 
-var unavailableDates = ["06/29/2020", "07/07/2020", "06/28/2021", "07/10/2020"]
+var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"];
 const setDateFormat = "mm/dd/yy";
 
 function disableDates(date) {
